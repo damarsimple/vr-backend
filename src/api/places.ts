@@ -6,7 +6,7 @@ import { errorHandler } from '../modules/errorHandler';
 
 export default function places(router: Router) {
 
-    router.get("/", (req, res) => {
+    router.get("/places", (req, res) => {
         //  #swagger.parameters['orderBy'] = { description: 'Order by' }
         //  #swagger.parameters['take'] = { description: 'Take' }
         //  #swagger.parameters['skip'] = { description: 'Skip' }
@@ -17,7 +17,7 @@ export default function places(router: Router) {
         });
     });
 
-    router.get("/:id", (req, res) => {
+    router.get("/places/:id", (req, res) => {
         // #swagger.tags = ['Places']
         // #swagger.description = 'Endpoint to get a place by id.'
         prisma.place.findUnique({
@@ -29,7 +29,7 @@ export default function places(router: Router) {
         });
     });
 
-    router.post("/", (req, res) => {
+    router.post("/places", (req, res) => {
         // #swagger.tags = ['Places']
         // #swagger.description = 'Endpoint to create a place.'
         prisma.place.create({
@@ -44,7 +44,7 @@ export default function places(router: Router) {
 
     });
 
-    router.put("/:id", (req, res) => {
+    router.put("/places/:id", (req, res) => {
         // #swagger.tags = ['Places']
         // #swagger.description = 'Endpoint to update a place.'
         prisma.place.update({
@@ -61,7 +61,7 @@ export default function places(router: Router) {
         })
     });
 
-    router.delete("/:id", (req, res) => {
+    router.delete("/places/:id", (req, res) => {
         // #swagger.tags = ['Places']
         // #swagger.description = 'Endpoint to delete a place.'
         prisma.place.delete({

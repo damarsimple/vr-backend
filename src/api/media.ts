@@ -5,7 +5,7 @@ import { extractFromParam } from "../modules/extractor";
 
 export default function media(router: Router) {
 
-    router.get("/", (req, res) => {
+    router.get("/media", (req, res) => {
         // #swagger.tags = ['Media']
         //  #swagger.parameters['orderBy'] = { description: 'Order by' }
         //  #swagger.parameters['take'] = { description: 'Take' }
@@ -16,7 +16,7 @@ export default function media(router: Router) {
         });
     });
 
-    router.get("/:id", (req, res) => {
+    router.get("/media/:id", (req, res) => {
         // #swagger.tags = ['Media']
         // #swagger.description = 'Get a media by id'
         prisma.media.findUnique({
@@ -28,7 +28,7 @@ export default function media(router: Router) {
         });
     });
 
-    router.post("/", (req, res) => {
+    router.post("/media", (req, res) => {
         // #swagger.tags = ['Media']
         // #swagger.description = 'Endpoint to create a media.'
         prisma.media.create({
@@ -43,7 +43,7 @@ export default function media(router: Router) {
 
     });
 
-    router.put("/:id", (req, res) => {
+    router.put("/media/:id", (req, res) => {
         // #swagger.tags = ['Media']
         // #swagger.description = 'Update a media'
         prisma.media.update({
@@ -59,7 +59,7 @@ export default function media(router: Router) {
             res.status(500).json({ error: e.message });
         })
     });
-    router.delete("/:id", (req, res) => {
+    router.delete("/media/:id", (req, res) => {
         // #swagger.tags = ['Media']
         // #swagger.description = 'Delete a media'
         prisma.media.delete({

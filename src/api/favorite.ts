@@ -5,7 +5,7 @@ import { extractFromParam } from '../modules/extractor';
 
 export default function favorites(router: Router) {
 
-    router.get("/", (req, res) => {
+    router.get("/favorite", (req, res) => {
         // #swagger.tags = ['Favorites']
         //  #swagger.parameters['orderBy'] = { description: 'Order by' }
         //  #swagger.parameters['take'] = { description: 'Take' }
@@ -16,7 +16,7 @@ export default function favorites(router: Router) {
         });
     });
 
-    router.get("/:id", (req, res) => {
+    router.get("/favorite/:id", (req, res) => {
         // #swagger.tags = ['Favorites']
         // #swagger.description = 'Endpoint to get a favorite by id.'
         prisma.favorite.findUnique({
@@ -28,7 +28,7 @@ export default function favorites(router: Router) {
         });
     });
 
-    router.post("/", (req, res) => {
+    router.post("/favorite", (req, res) => {
         // #swagger.tags = ['Favorites']
         // #swagger.description = 'Endpoint to create a favorite.'
         prisma.favorite.create({
@@ -43,7 +43,7 @@ export default function favorites(router: Router) {
 
     });
 
-    router.put("/:id", (req, res) => {
+    router.put("/favorite/:id", (req, res) => {
         // #swagger.tags = ['Favorites']
         // #swagger.description = 'Update a favorite'
         prisma.favorite.update({
@@ -61,7 +61,7 @@ export default function favorites(router: Router) {
     });
 
 
-    router.delete("/:id", (req, res) => {
+    router.delete("/favorite/:id", (req, res) => {
         // #swagger.tags = ['Favorites']
         // #swagger.description = 'Delete a favorite'
         prisma.favorite.delete({

@@ -4,7 +4,7 @@ import { extractFromParam } from '../modules/extractor';
 
 export default function mediaEvent(router: Router) {
 
-    router.get("/", (req, res) => {
+    router.get("/mediaEvent", (req, res) => {
         // #swagger.tags = ['MediaEvent']
         //  #swagger.parameters['orderBy'] = { description: 'Order by' }
         //  #swagger.parameters['take'] = { description: 'Take' }
@@ -15,7 +15,7 @@ export default function mediaEvent(router: Router) {
         });
     });
 
-    router.get("/:id", (req, res) => {
+    router.get("/mediaEvent:id", (req, res) => {
         // #swagger.tags = ['MediaEvent']
         prisma.mediaEvent.findUnique({
             where: {
@@ -26,7 +26,7 @@ export default function mediaEvent(router: Router) {
         });
     });
 
-    router.post("/", (req, res) => {
+    router.post("/mediaEvent", (req, res) => {
         // #swagger.tags = ['MediaEvent']
         // #swagger.description = 'Endpoint to create a mediaEvent.'
         prisma.mediaEvent.create({
@@ -41,7 +41,7 @@ export default function mediaEvent(router: Router) {
 
     });
 
-    router.put("/:id", (req, res) => {
+    router.put("/mediaEvent/:id", (req, res) => {
         // #swagger.tags = ['MediaEvent']
         // #swagger.description = 'Update a mediaEvent'
         prisma.mediaEvent.update({
@@ -58,7 +58,7 @@ export default function mediaEvent(router: Router) {
         })
     });
 
-    router.delete("/:id", (req, res) => {
+    router.delete("/mediaEvent/:id", (req, res) => {
         // #swagger.tags = ['MediaEvent']
         // #swagger.description = 'Delete a mediaEvent'
         prisma.mediaEvent.delete({

@@ -5,7 +5,7 @@ import { extractFromParam } from "../modules/extractor";
 
 export default function events(router: Router) {
 
-    router.get("/", (req, res) => {
+    router.get("/events", (req, res) => {
         // #swagger.tags = ['Events']
         //  #swagger.parameters['orderBy'] = { description: 'Order by' }
         //  #swagger.parameters['take'] = { description: 'Take' }
@@ -16,7 +16,7 @@ export default function events(router: Router) {
         });
     });
 
-    router.get("/:id", (req, res) => {
+    router.get("/events/:id", (req, res) => {
         // #swagger.tags = ['Events']
         // #swagger.description = 'Get a event by id'
         prisma.event.findUnique({
@@ -28,7 +28,7 @@ export default function events(router: Router) {
         });
     });
 
-    router.post("/", (req, res) => {
+    router.post("/events", (req, res) => {
         // #swagger.tags = ['Events']
         // #swagger.description = 'Endpoint to create a event.'
         prisma.event.create({
@@ -43,7 +43,7 @@ export default function events(router: Router) {
 
     });
 
-    router.put("/:id", (req, res) => {
+    router.put("/events/:id", (req, res) => {
         // #swagger.tags = ['Events']
 
         // #swagger.description = 'Update a event'
@@ -60,7 +60,7 @@ export default function events(router: Router) {
             res.status(500).json({ error: e.message });
         })
     });
-    router.delete("/:id", (req, res) => {
+    router.delete("/events/:id", (req, res) => {
         // #swagger.tags = ['Events']
         // #swagger.description = 'Delete a event'
         prisma.event.delete({

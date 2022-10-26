@@ -5,7 +5,7 @@ import { extractFromParam } from '../modules/extractor';
 
 export default function proposals(router: Router) {
 
-    router.get("/", (req, res) => {
+    router.get("/proposals", (req, res) => {
         // #swagger.tags = ['Proposals']
         //  #swagger.parameters['orderBy'] = { description: 'Order by' }
         //  #swagger.parameters['take'] = { description: 'Take' }
@@ -17,7 +17,7 @@ export default function proposals(router: Router) {
         });
     });
 
-    router.get("/:id", (req, res) => {
+    router.get("/proposals/:id", (req, res) => {
         // #swagger.tags = ['Proposals']
         // #swagger.description = 'Get a proposal by id'
         prisma.proposal.findUnique({
@@ -29,7 +29,7 @@ export default function proposals(router: Router) {
         });
     });
 
-    router.post("/", (req, res) => {
+    router.post("/proposals", (req, res) => {
         // #swagger.tags = ['Proposals']
         // #swagger.description = 'Create a new proposal'
         prisma.proposal.create({
@@ -44,7 +44,7 @@ export default function proposals(router: Router) {
 
     });
 
-    router.put("/:id", (req, res) => {
+    router.put("/proposals/:id", (req, res) => {
         // #swagger.tags = ['Proposals']
         // #swagger.description = 'Update a proposal'
         prisma.proposal.update({
@@ -60,7 +60,7 @@ export default function proposals(router: Router) {
             res.status(500).json({ error: e.message });
         })
     });
-    router.delete("/:id", (req, res) => {
+    router.delete("/proposals/:id", (req, res) => {
         // #swagger.tags = ['Proposals']
         // #swagger.description = 'Delete a proposal'
         prisma.proposal.delete({
