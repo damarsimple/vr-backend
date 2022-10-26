@@ -1,0 +1,580 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "REST API",
+    "description": ""
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/places/": {
+      "get": {
+        "tags": [
+          "Places"
+        ],
+        "description": "Endpoint to get all places.",
+        "parameters": [
+          {
+            "name": "orderBy",
+            "description": "Order by",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "take",
+            "description": "Take",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "skip",
+            "description": "Skip",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Places"
+        ],
+        "description": "Endpoint to create a place.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/places/{id}": {
+      "get": {
+        "tags": [
+          "Places"
+        ],
+        "description": "Endpoint to get a place by id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Places"
+        ],
+        "description": "Endpoint to update a place.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Places"
+        ],
+        "description": "Endpoint to delete a place.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/media/": {
+      "get": {
+        "tags": [
+          "Media"
+        ],
+        "description": "Get all media",
+        "parameters": [
+          {
+            "name": "orderBy",
+            "description": "Order by",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "take",
+            "description": "Take",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "skip",
+            "description": "Skip",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Media"
+        ],
+        "description": "Endpoint to create a media.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/media/{id}": {
+      "get": {
+        "tags": [
+          "Media"
+        ],
+        "description": "Get a media by id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Media"
+        ],
+        "description": "Update a media",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Media"
+        ],
+        "description": "Delete a media",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/mediaEvent/": {
+      "get": {
+        "tags": [
+          "MediaEvent"
+        ],
+        "description": "Get all media events",
+        "parameters": [
+          {
+            "name": "orderBy",
+            "description": "Order by",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "take",
+            "description": "Take",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "skip",
+            "description": "Skip",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "MediaEvent"
+        ],
+        "description": "Endpoint to create a mediaEvent.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/mediaEvent/{id}": {
+      "get": {
+        "tags": [
+          "MediaEvent"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "MediaEvent"
+        ],
+        "description": "Update a mediaEvent",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "MediaEvent"
+        ],
+        "description": "Delete a mediaEvent",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/proposal/": {
+      "get": {
+        "tags": [
+          "Proposals"
+        ],
+        "description": "Get all proposals",
+        "parameters": [
+          {
+            "name": "orderBy",
+            "description": "Order by",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "take",
+            "description": "Take",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "skip",
+            "description": "Skip",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Proposals"
+        ],
+        "description": "Create a new proposal",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/proposal/{id}": {
+      "get": {
+        "tags": [
+          "Proposals"
+        ],
+        "description": "Get a proposal by id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Proposals"
+        ],
+        "description": "Update a proposal",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Proposals"
+        ],
+        "description": "Delete a proposal",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/events/": {
+      "get": {
+        "tags": [
+          "Events"
+        ],
+        "description": "Get all events",
+        "parameters": [
+          {
+            "name": "orderBy",
+            "description": "Order by",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "take",
+            "description": "Take",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "skip",
+            "description": "Skip",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Events"
+        ],
+        "description": "Endpoint to create a event.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/events/{id}": {
+      "get": {
+        "tags": [
+          "Events"
+        ],
+        "description": "Get a event by id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Events"
+        ],
+        "description": "Update a event",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Events"
+        ],
+        "description": "Delete a event",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
